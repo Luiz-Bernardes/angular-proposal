@@ -12,16 +12,16 @@ import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
 
 const ROUTES = RouterModule.forRoot([
   {
+    path: 'tasks/:id',
+    component: TaskDetailComponent
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent
   },
   {
     path: 'tasks',
     component: TasksComponent
-  },
-  {
-    path: 'tasks/:id',
-    component: TaskDetailComponent
   },
   {
     path: '',
@@ -42,6 +42,7 @@ const ROUTES = RouterModule.forRoot([
     BrowserModule,
     FormsModule,
     HttpModule,
+    RouterModule,
     ROUTES
   ],
   providers: [],

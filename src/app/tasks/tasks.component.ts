@@ -6,7 +6,7 @@ import { TaskService } from './shared/task.service'
 @Component({
 	selector: 'tasks',
 	templateUrl: './tasks.component.html',
-	providers: [ TaskService ]
+	providers: [TaskService]
 })
 
 export class TasksComponent implements OnInit{
