@@ -1,47 +1,33 @@
-import { Http } from '@angular/http'
+import { Http, Response } from '@angular/http'
 import { Injectable } from '@angular/core'
 
-import { Task } from './task.model'
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
 
-const TASKS: Array<Task> = [
-	{ id: 1, title: 'tarefa 1' },
-	{ id: 2, title: 'tarefa 2' },
-	{ id: 3, title: 'tarefa 3' },
-	{ id: 4, title: 'tarefa 4' },
-	{ id: 5, title: 'tarefa 5' },
-	{ id: 6, title: 'tarefa 6' },
-	{ id: 7, title: 'tarefa 7' }
-]
+import { Task } from './task.model'
 
 @Injectable()
 
 export class TaskService{
+	public tasksUrl	= "api/tasks"
+
 	public constructor(private http: Http){}
 
-	public getTasks(): Promise<Task[]>{
-		
-		let promise = new Promise((resolve, reject) => {
-			
-			if(TASKS.length > 0){
-				resolve(TASKS);
-			} else {
-				let error_msg = "Não há tarefas";
-				reject(error_msg);
-			}
-
-		})
-
-		return promise;
-	
+	public getTasks(): Observable<Task[]>{
+		return this.http.get(this.tasksUrl)
+			.map((response: Response) => response.json().data as Task[])
 	}
 
-	public getImportantTasks(): Promise<Task[]>{
-		return Promise.resolve(TASKS.slice(0,3))
-	}
-
-	public getTask(id: number): Promise<Task> {
+	public getImportantTasks(): Observable<Task[]>{
 		return this.getTasks()
-			.then(tasks => tasks.find(task => task.id === id))
+			.map(tasks => tasks.slice(0,3));
+	}
+
+	public getTask(id: number): Observable<Task> {
+		let url = `${this.tasksUrl}/${id}`;
+
+		return this.http.get(url)
+			.map((response: Response) => response.json().data as Task) 
 	}
 
 }
