@@ -33,6 +33,8 @@
 			  <a [routerLink]="['/tasks',task.id]" class="btn btn-info">
 			  	Detalhes
 			  </a>
+
+			  <button class="btn btn-danger" (click)="deleteTask(task)">Excluir</button>
 			
 			</td>
 		</tr>
