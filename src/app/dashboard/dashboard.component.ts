@@ -9,7 +9,7 @@ import { TaskService } from '../tasks/shared/task.service'
 
 export class DashboardComponent{
 	// public constructor(private taskService: TaskService){
-	// 	this.taskService.getTasks()
+	// 	this.taskService.getAll()
 	// }
 	
 }
