@@ -47,6 +47,16 @@ export class TaskService{
 			.map(() => task)
 	}
 
+	public createTask(task: Task): Observable<Task>{
+		let url = this.tasksUrl;
+		let body = JSON.stringify(task);
+		let headers = new Headers({'Content-Type': 'application/json'});
+
+		return this.http.post(url, body, { headers: headers })
+			.catch(this.handleErrors)
+			.map(response => response.json().data as Task)
+	}
+
 	private handleErrors(error: Response){
 		console.log("Salvando erros em um arquivo de log!", error);
 		return Observable.throw(error);
