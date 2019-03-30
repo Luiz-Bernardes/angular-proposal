@@ -13,7 +13,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
 
-import { ProposalsComponent } from './proposals/proposals.component'
+import { ProposalsComponent } from './proposals/proposals.component';
+import { ProposalDetailComponent } from './proposals/proposal-detail/proposal-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProposalsComponent } from './proposals/proposals.component'
     NavbarComponent,
     TasksComponent,
     TaskDetailComponent,
-    ProposalsComponent
+    ProposalsComponent,
+    ProposalDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,53 @@
+<h1 class="page-header">Detalhes: {{ proposal?.name }}</h1>
+
+
+<div class="form-horizontal" *ngIf="proposal">
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Nome da proposta</label>
+    <div class="col-sm-8">
+      <input [(ngModel)]="proposal.name" type="text" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Descrição da proposta</label>
+    <div class="col-sm-8">
+      <input [(ngModel)]="proposal.description" type="text" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="value" class="col-sm-2 col-form-label">Valor da proposta</label>
+    <div class="col-sm-8">
+      <input [(ngModel)]="proposal.value" type="text" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="date_begin" class="col-sm-2 col-form-label">Data inicial da proposta</label>
+    <div class="col-sm-8">
+      <input [(ngModel)]="proposal.date_begin" type="text" class="form-control">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="date_end" class="col-sm-2 col-form-label">Data final da proposta</label>
+    <div class="col-sm-8">
+      <input [(ngModel)]="proposal.date_end" type="text" class="form-control">
+    </div>
+  </div>
+
+   <div class="form-group row">
+    <label for="city" class="col-sm-2 col-form-label">Cidade da proposta</label>
+    <div class="col-sm-8">
+      <input [(ngModel)]="proposal.city" type="text" class="form-control">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <div class="col-sm-8">
+      <button class="btn btn-info" (click)="goBack()">Voltar</button>
+      <!-- <button type="submit" class="btn btn-success" (click)="updateProposal()">Atualizar</button> -->
+    </div>
+  </div>
+</div>

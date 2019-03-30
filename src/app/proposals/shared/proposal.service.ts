@@ -24,19 +24,13 @@ export class ProposalService{
 			.map((response: Response) => response.json().data as Proposal[])
 	}
 
-	// public getImportants(): Observable<Task[]>{
-	// 	return this.getAll()
-	// 		.catch(this.handleErrors)
-	// 		.map(tasks => tasks.slice(0,3));
-	// }
+	public getById(id: number): Observable<Proposal> {
+		let url = `${this.proposalsUrl}/${id}`;
 
-	// public getById(id: number): Observable<Task> {
-	// 	let url = `${this.tasksUrl}/${id}`;
-
-	// 	return this.http.get(url)
-	// 		.catch(this.handleErrors)
-	// 		.map((response: Response) => response.json().data as Task) 
-	// }
+		return this.http.get(url)
+			.catch(this.handleErrors)
+			.map((response: Response) => response.json().data as Proposal) 
+	}
 
 	// public update(task: Task): Observable<Task> {
 	// 	let url = `${this.tasksUrl}/${task.id}`; 
