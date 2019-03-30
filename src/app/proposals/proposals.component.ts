@@ -46,15 +46,15 @@ export class ProposalsComponent implements OnInit{
 		else { return true; }
 	}
 
-	// public deleteTask(task: Task){
-	// 	if( confirm(`Deseja realmente excluir a tarefa "${task.title}"`)){
-	// 		this.taskService.delete(task.id)
-	// 			.subscribe(
-	// 				() => this.tasks = this.tasks.filter(t => t !== task),
-	// 				() => alert("Ocorreu um erro no servidor, tente mais tarde!")
-	// 			)
-	// 	}
-	// }
+	public deleteProposal(proposal: Proposal){
+		if( confirm(`Deseja realmente excluir a proposta "${proposal.name}"`)){
+			this.proposalService.delete(proposal.id)
+				.subscribe(
+					() => this.proposals = this.proposals.filter(t => t !== proposal),
+					() => alert("Ocorreu um erro no servidor, tente mais tarde!")
+				)
+		}
+	}
 
 	public ngOnInit(){
 		this.proposalService.getAll()

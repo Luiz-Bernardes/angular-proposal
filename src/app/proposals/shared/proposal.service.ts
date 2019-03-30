@@ -50,13 +50,13 @@ export class ProposalService{
 			.map(response => response.json().data as Proposal)
 	}
 
-	// public delete(id: number): Observable<null>{
-	// 	let url = `${this.tasksUrl}/${id}`;
+	public delete(id: number): Observable<null>{
+		let url = `${this.proposalsUrl}/${id}`;
 
-	// 	return this.http.delete(url, { headers: this.headers})
-	// 		.catch(this.handleErrors)
-	// 		.map(() => null)
-	// }
+		return this.http.delete(url, { headers: this.headers})
+			.catch(this.handleErrors)
+			.map(() => null)
+	}
 
 	private handleErrors(error: Response){
 		console.log("Salvando erros em um arquivo de log!", error);
