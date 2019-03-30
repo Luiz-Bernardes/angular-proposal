@@ -32,14 +32,14 @@ export class ProposalService{
 			.map((response: Response) => response.json().data as Proposal) 
 	}
 
-	// public update(task: Task): Observable<Task> {
-	// 	let url = `${this.tasksUrl}/${task.id}`; 
-	// 	let body = JSON.stringify(task);
+	public update(proposal: Proposal): Observable<Proposal> {
+		let url = `${this.proposalsUrl}/${proposal.id}`; 
+		let body = JSON.stringify(proposal);
 
-	// 	return this.http.put(url, body, { headers: this.headers })
-	// 		.catch(this.handleErrors)
-	// 		.map(() => task)
-	// }
+		return this.http.put(url, body, { headers: this.headers })
+			.catch(this.handleErrors)
+			.map(() => proposal)
+	}
 
 	public create(proposal: Proposal): Observable<Proposal>{
 		let url = this.proposalsUrl;

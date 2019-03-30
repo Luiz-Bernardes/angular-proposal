@@ -31,17 +31,13 @@ export class ProposalDetailComponent implements OnInit{
 		 )
 	}
 
-	// public updateTask(){
-	// 	if(!this.task.title){
-	// 		alert('A tarefa deve ter um título'); 
-	// 	} else {
-	// 		this.taskService.update(this.task)
-	// 			.subscribe(
-	// 				() => alert('Tarefa atualizada com sucesso!'),
-	// 				() => alert('Ocorreu um erro no servidor, tente mais tarde!')
-	// 			)
-	// 	}
-	// }
+	public updateProposal(){
+		this.proposalService.update(this.proposal)
+			.subscribe(
+				() => alert('Proposta atualizada com sucesso!'),
+				() => alert('Ocorreu um erro no servidor, tente mais tarde!')
+			)
+	}
 
 	public goBack() {
 		this.location.back();
