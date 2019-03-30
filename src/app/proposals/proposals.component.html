@@ -1,0 +1,52 @@
+<br />
+
+<h1 class="page-header">Lista de Propostas</h1>
+
+<!-- <div class="well">
+	<div class="row">
+		
+		<div class="col-md-10">
+			<input type="text" class="form-control" [(ngModel)]="newTask.title" placeholder="Nome da tarefa" />
+		</div>
+		
+		<div class="col-md-2">
+			<button class="btn btn-success" (click)="createTask()">Adicionar Tarefa</button>
+		</div>
+	
+	</div>
+</div>
+ -->
+<br />
+
+<table class="table">
+	<thead>
+		<tr>
+			<td>Nome</td>
+			<td>Descrição</td>
+			<td>Valor</td>
+			<td>Data de Início</td>
+			<td>Data de Fim</td>
+			<td>Cidade</td>
+			<td>Ações</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let proposal of proposals">
+			<td>{{proposal.name}}</td>
+			<td>{{proposal.description}}</td>
+			<td>{{proposal.value}}</td>
+			<td>{{proposal.date_begin}}</td>
+			<td>{{proposal.date_end}}</td>
+			<td>{{proposal.city}}</td>
+			<td>
+				
+			  <!-- <a [routerLink]="['/proposals',proposal.id]" class="btn btn-info">
+			  	Detalhes
+			  </a> -->
+
+			  <!-- <button class="btn btn-danger" (click)="deleteTask(task)">Excluir</button> -->
+			
+			</td>
+		</tr>
+	</tbody>
+</table>

@@ -9,8 +9,11 @@ import { InMemoryTaskDataService } from './in-memory-task-data.service';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
+
+import { ProposalsComponent } from './proposals/proposals.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
     DashboardComponent,
     NavbarComponent,
     TasksComponent,
-    TaskDetailComponent
+    TaskDetailComponent,
+    ProposalsComponent
   ],
   imports: [
     BrowserModule,

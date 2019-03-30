@@ -17,7 +17,28 @@ export class InMemoryTaskDataService implements InMemoryDbService{
 			{ id: 7, title: 'tarefa 7' }
 		];
 
-		return { tasks }
+	  let proposals = [
+			{ 
+				id: 1, 
+				name: 'proposta 1', 
+				description: 'descrição da proposta 1', 
+				value: 2.25, 
+				date_begin: '01/01/2019', 
+				date_end: '08/01/2019',
+				city: 'Rio de Janeiro',
+			},
+			{ 
+				id: 2, 
+				name: 'proposta 2', 
+				description: 'descrição da proposta 2', 
+				value: 4.59, 
+				date_begin: '10/02/2019', 
+				date_end: '17/02/2019',
+				city: 'São Paulo',
+			}
+	  ];
+
+		return { tasks, proposals }
 	}
 
 }
