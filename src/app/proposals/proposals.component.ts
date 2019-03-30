@@ -17,23 +17,25 @@ export class ProposalsComponent implements OnInit{
 		this.newProposal = new Proposal(null,'','',null,'','','');
 	}
 
-	// public createTask(){
-	// 	this.newTask.title = this.newTask.title.trim(); 
+	public createProposal(){
+		this.newProposal.name = this.newProposal.name.trim(); 
+		this.newProposal.description = this.newProposal.description.trim(); 
+		this.newProposal.city = this.newProposal.city.trim(); 
 
-	// 	if(!this.newTask.title){
-	// 		alert("A tarefa deve ter um título!");
-	// 	} else {
-	// 		this.taskService.create(this.newTask)
-	// 			.subscribe(
-	// 				(task) => {
-	// 					this.tasks.push(task);
-	// 					this.newTask = new Task(null, '');
-	// 				},
-	// 				() => alert("Ocorreu um erro no servidor, tente mais tarde!")
-	// 			)
-	// 	}
+		if(!this.newProposal.name){
+			alert("A proposta deve ter um nome!");
+		} else {
+			this.proposalService.create(this.newProposal)
+				.subscribe(
+					(proposal) => {
+						this.proposals.push(proposal);
+						this.newProposal = new Proposal(null,'','',null,'','','');
+					},
+					() => alert("Ocorreu um erro no servidor, tente mais tarde!")
+				)
+		}
 
-	// }
+	}
 
 	// public deleteTask(task: Task){
 	// 	if( confirm(`Deseja realmente excluir a tarefa "${task.title}"`)){

@@ -47,14 +47,14 @@ export class ProposalService{
 	// 		.map(() => task)
 	// }
 
-	// public create(task: Task): Observable<Task>{
-	// 	let url = this.tasksUrl;
-	// 	let body = JSON.stringify(task);
+	public create(proposal: Proposal): Observable<Proposal>{
+		let url = this.proposalsUrl;
+		let body = JSON.stringify(proposal);
 
-	// 	return this.http.post(url, body, { headers: this.headers })
-	// 		.catch(this.handleErrors)
-	// 		.map(response => response.json().data as Task)
-	// }
+		return this.http.post(url, body, { headers: this.headers })
+			.catch(this.handleErrors)
+			.map(response => response.json().data as Proposal)
+	}
 
 	// public delete(id: number): Observable<null>{
 	// 	let url = `${this.tasksUrl}/${id}`;
