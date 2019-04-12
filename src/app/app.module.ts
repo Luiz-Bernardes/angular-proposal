@@ -9,6 +9,7 @@ import { InMemoryTaskDataService } from './in-memory-task-data.service';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchComponent } from './navbar/search/search.component';
 
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
@@ -21,6 +22,7 @@ import { ProposalDetailComponent } from './proposals/proposal-detail/proposal-de
     AppComponent,
     DashboardComponent,
     NavbarComponent,
+    SearchComponent,
     TasksComponent,
     TaskDetailComponent,
     ProposalsComponent,
