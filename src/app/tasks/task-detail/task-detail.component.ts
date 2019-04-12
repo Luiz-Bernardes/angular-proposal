@@ -10,7 +10,7 @@ import { TaskService } from '../shared/task.service';
 @Component({
 	selector: 'task-detail',
 	templateUrl: './task-detail.component.html',
-	providers: [TaskService]
+	providers: []
 })
 
 export class TaskDetailComponent implements OnInit{

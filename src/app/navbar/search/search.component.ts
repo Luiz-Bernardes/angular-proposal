@@ -10,6 +10,6 @@ import { TaskService } from "../../tasks/shared/task.service";
 
 export class SearchComponent {
 
-	// public constructor(private taskService: TaskService){}
+	public constructor(private taskService: TaskService){}
 	
 }

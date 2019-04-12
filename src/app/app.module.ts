@@ -17,14 +17,18 @@ import { TaskDetailComponent } from './tasks/task-detail/task-detail.component';
 import { ProposalsComponent } from './proposals/proposals.component';
 import { ProposalDetailComponent } from './proposals/proposal-detail/proposal-detail.component';
 
+import { TaskService } from './tasks/shared/task.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
     SearchComponent,
+    
     TasksComponent,
     TaskDetailComponent,
+    
     ProposalsComponent,
     ProposalDetailComponent
   ],
@@ -35,7 +39,7 @@ import { ProposalDetailComponent } from './proposals/proposal-detail/proposal-de
     AppRoutingModule,
     InMemoryWebApiModule.forRoot(InMemoryTaskDataService)
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
