@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
-import 'rxjs/add/operator/switchMap';
-
 import { Proposal } from '../shared/proposal.model';
 import { ProposalService } from '../shared/proposal.service';
 
