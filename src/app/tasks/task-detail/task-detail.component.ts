@@ -48,5 +48,9 @@ export class TaskDetailComponent implements OnInit{
 	public goBack() {
 		this.location.back();
 	}
+
+	public showFieldError(field): boolean {
+		return field.invalid && ( field.touched || field.dirty )
+	}
 }
 
