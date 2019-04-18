@@ -32,6 +32,9 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 
+// jquery plugins
+import * as $ from 'jquery';
+
 // in memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryTaskDataService } from './in-memory-task-data.service';

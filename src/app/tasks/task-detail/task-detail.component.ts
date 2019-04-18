@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { TaskService } from '../shared/task.service';
 	providers: []
 })
 
-export class TaskDetailComponent implements OnInit{
+export class TaskDetailComponent implements OnInit, AfterViewInit{
 	public task: Task;
 	public taskDoneOptions: Array<any> = [
 		{ value: false, text: "Pendente"},
@@ -51,6 +51,10 @@ export class TaskDetailComponent implements OnInit{
 
 	public showFieldError(field): boolean {
 		return field.invalid && ( field.touched || field.dirty )
+	}
+
+	public ngAfterViewInit(){
+		$("#example").fadeOut(3000);
 	}
 }
 
