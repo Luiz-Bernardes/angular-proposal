@@ -34,6 +34,7 @@ import 'rxjs/add/observable/throw';
 
 // jquery plugins
 import * as $ from 'jquery';
+import * as datetimepicker from 'eonasdan-bootstrap-datetimepicker';
 
 // in memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';

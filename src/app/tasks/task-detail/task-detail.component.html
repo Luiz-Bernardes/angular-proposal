@@ -1,7 +1,7 @@
-<h1 class="page-header">Detalhes: {{ task?.title }}</h1>
+<h1 class="page-header">Detalhes: {{ task.title }}</h1>
 
 
-<form #taskForm="ngForm" *ngIf="task">
+<form #taskForm="ngForm">
   
   <div class="row">
     <div class="form-group col-md-6 has-feedback" [class.has-error]="showFieldError(title)" [class.has-success]="title.valid">

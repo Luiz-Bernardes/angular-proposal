@@ -25,6 +25,8 @@ export class TaskDetailComponent implements OnInit, AfterViewInit{
 	){}
 
 	public ngOnInit(){
+		this.task = new Task(null, null) // jquery onload adjust
+
 		this.route.params
 		 .switchMap((params: Params) => this.taskService.getById(+params['id']))
 		 .subscribe(
@@ -55,6 +57,10 @@ export class TaskDetailComponent implements OnInit, AfterViewInit{
 
 	public ngAfterViewInit(){
 		$("#example").fadeOut(3000);
+		$("#deadline").datetimepicker({
+			'sideBySide': true,
+			'locale': 'pt-br'
+		}).on('dp.change', () => this.task.deadline = $("#deadline").val());
 	}
 }
 
