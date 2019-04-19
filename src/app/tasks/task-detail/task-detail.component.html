@@ -1,7 +1,7 @@
 <h1 class="page-header">Detalhes: {{ task.title }}</h1>
 
 
-<form #taskForm="ngForm">
+<form #taskForm="ngForm" (ngSubmit)="updateTask()">
   
   <div class="row">
     <div class="form-group col-md-6 has-feedback" [class.has-error]="showFieldError(title)" [class.has-success]="title.valid">
@@ -38,8 +38,8 @@
     </div>
   </div>
   
-  <button class="btn btn-info" (click)="goBack()">Voltar</button>
-  <button [disabled]="taskForm.invalid" type="submit" class="btn btn-success" (click)="updateTask()">Atualizar</button>
+  <button [disabled]="taskForm.invalid" type="submit" class="btn btn-success">Atualizar</button>
+  <!-- (click)="updateTask()" -->
 
   <hr />
 
@@ -47,5 +47,9 @@
 
 
 </form>
+
+<button class="btn btn-info" (click)="goBack()">Voltar</button>
+
+<hr />
 
 <pre id="example">teste</pre>
